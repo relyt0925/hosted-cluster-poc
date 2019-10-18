@@ -18,7 +18,7 @@ fi
 export EXTERNAL_API_DNS_NAME=$(oc -n kube-system get cm ibm-cloud-cluster-ingress-info -o jsonpath='{.data.ingress-subdomain}')
 
 # the external IP on which to connect to the user cluster API server
-export EXTERNAL_API_IP_ADDRESS=$(dig +short ${EXTERNAL_API_DNS_NAME})
+export EXTERNAL_API_IP_ADDRESS="169.254.254.0"
 
 # the external port on which to connect to the user cluster API server
 # IMPACT: admin.kubeconfig server URL
